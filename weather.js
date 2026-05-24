@@ -7,7 +7,7 @@ weather.js
 
 const WEATHER_VARIABLES =
     "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m";
-
+  
 
 /*
 -------------------------------------------------
