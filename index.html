@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    .loading {
+    .updating {
     color: #bbf7d0;
     font-style: italic;
     opacity: 0.8;
@@ -16,6 +16,19 @@
 
 .error {
     color: #fecaca;
+    font-weight: 600;
+}
+    .updating {
+    color: #bbf7d0;
+    font-style: italic;
+    opacity: 0.8;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.error {
+    color: #fecaca;
+    font-size: 0.85rem;
     font-weight: 600;
 }
     body {
@@ -40,7 +53,7 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 24px rgba(0,0,0,0.18);
     }
-    .loading {
+    .updating {
     color: #bbf7d0;
     font-style: italic;
     opacity: 0.8;
