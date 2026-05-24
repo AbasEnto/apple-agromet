@@ -3,12 +3,9 @@
 Kashmir AgroMet Dashboard
 dashboard.js
 =========================================
-Reads weather data and updates cards   
+Reads weather data and updates cards
 =========================================
 */
-
-
-/*
 
 /*
 -----------------------------------------
@@ -179,6 +176,18 @@ Main Dashboard Refresh
 */
 async function refreshDashboard() {
 
+    districts.forEach(d => {
+        setLoadingState(d.id);
+    });
+
+    const timestampElement =
+        document.getElementById("last-updated");
+
+    if (timestampElement) {
+        timestampElement.textContent =
+            "Fetching weather...";
+    }
+
     console.log(
         "Loading district weather..."
     );
@@ -194,7 +203,6 @@ async function refreshDashboard() {
                 item.district
                     .toLowerCase()
                     .replace(/\s+/g, "-");
-            setLoadingState(districtId);
 
             updateDistrictCard(
                 districtId,
@@ -214,11 +222,13 @@ async function refreshDashboard() {
             "Dashboard update failed:",
             error
         );
+
+        districts.forEach(d => {
+            setErrorState(d.id);
+        });
     }
 }
-
-
-/*
+*/
 -----------------------------------------
 Start dashboard
 -----------------------------------------
