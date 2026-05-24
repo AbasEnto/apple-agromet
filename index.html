@@ -52,7 +52,8 @@
         </div>
 
         <div class="glass rounded-2xl px-5 py-4 text-sm text-green-50 shadow-lg w-fit">
-          Last Updated: --
+        Last Updated:
+        <span id="last-updated">--</span>
         </div>
       </div>
     </div>
@@ -96,22 +97,34 @@
 
           <div class="bg-white/10 rounded-2xl p-4">
             <p class="text-xs uppercase tracking-wide text-green-100">Temp</p>
-            <p class="text-2xl font-bold mt-2">-- °C</p>
+            <p id="srinagar-temp"
+           class="text-2xl font-bold mt-2">
+             --
+            </p>
           </div>
 
           <div class="bg-white/10 rounded-2xl p-4">
             <p class="text-xs uppercase tracking-wide text-green-100">RH</p>
-            <p class="text-2xl font-bold mt-2">-- %</p>
+            <p id="srinagar-rh"
+           class="text-2xl font-bold mt-2">
+             --
+            </p>
           </div>
 
           <div class="bg-white/10 rounded-2xl p-4">
             <p class="text-xs uppercase tracking-wide text-green-100">Rain</p>
-            <p class="text-2xl font-bold mt-2">-- mm</p>
+            <p id="srinagar-rain"
+           class="text-2xl font-bold mt-2">
+           --
+            </p>
           </div>
 
           <div class="bg-white/10 rounded-2xl p-4">
             <p class="text-xs uppercase tracking-wide text-green-100">Wind</p>
-            <p class="text-2xl font-bold mt-2">-- km/h</p>
+            <p id="srinagar-wind"
+           class="text-2xl font-bold mt-2">
+             --
+            </p>
           </div>
 
         </div>
@@ -156,22 +169,34 @@
 
                 <div class="bg-white/10 rounded-2xl p-4">
                   <p class="text-xs uppercase tracking-wide text-green-100">Temp</p>
-                  <p class="text-2xl font-bold mt-2">-- °C</p>
+                  <p id="${d.toLowerCase()}-temp"
+   class="text-2xl font-bold mt-2">
+   --
+</p>
                 </div>
 
                 <div class="bg-white/10 rounded-2xl p-4">
                   <p class="text-xs uppercase tracking-wide text-green-100">RH</p>
-                  <p class="text-2xl font-bold mt-2">-- %</p>
+                  <p id="${d.toLowerCase()}-rh"
+   class="text-2xl font-bold mt-2">
+   --
+</p>
                 </div>
 
                 <div class="bg-white/10 rounded-2xl p-4">
                   <p class="text-xs uppercase tracking-wide text-green-100">Rain</p>
-                  <p class="text-2xl font-bold mt-2">-- mm</p>
+                  <p id="${d.toLowerCase()}-rain"
+   class="text-2xl font-bold mt-2">
+   --
+</p>
                 </div>
 
                 <div class="bg-white/10 rounded-2xl p-4">
                   <p class="text-xs uppercase tracking-wide text-green-100">Wind</p>
-                  <p class="text-2xl font-bold mt-2">-- km/h</p>
+                  <p id="${d.toLowerCase()}-wind"
+   class="text-2xl font-bold mt-2">
+   --
+</p>
                 </div>
 
               </div>
