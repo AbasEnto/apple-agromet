@@ -154,64 +154,87 @@
         ];
 
         document.write(
-         districtNames.map(d =>
-            <div class="glass tile rounded-3xl p-6 shadow-xl">
-              <div class="flex items-center justify-between mb-5">
-                <div>
-                  <h2 class="text-2xl font-bold">${d}</h2>
-                  <p class="text-green-100 text-sm mt-1">Apple belt monitoring station</p>
-                </div>
+  districtNames.map(d => `
+    <div class="glass tile rounded-3xl p-6 shadow-xl">
 
-                <div class="text-5xl">🍎</div>
-              </div>
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <h2 class="text-2xl font-bold">${d}</h2>
+          <p class="text-green-100 text-sm mt-1">
+            Apple belt monitoring station
+          </p>
+        </div>
 
-              <div class="grid grid-cols-2 gap-4">
+        <div class="text-5xl">🍎</div>
+      </div>
 
-                <div class="bg-white/10 rounded-2xl p-4">
-                  <p class="text-xs uppercase tracking-wide text-green-100">Temp</p>
-                  <p id="${d.toLowerCase()}-temp"
-   class="text-2xl font-bold mt-2">
-   --
-</p>
-                </div>
+      <div class="grid grid-cols-2 gap-4">
 
-                <div class="bg-white/10 rounded-2xl p-4">
-                  <p class="text-xs uppercase tracking-wide text-green-100">RH</p>
-                  <p id="${d.toLowerCase()}-rh"
-   class="text-2xl font-bold mt-2">
-   --
-</p>
-                </div>
+        <div class="bg-white/10 rounded-2xl p-4">
+          <p class="text-xs uppercase tracking-wide text-green-100">
+            Temp
+          </p>
 
-                <div class="bg-white/10 rounded-2xl p-4">
-                  <p class="text-xs uppercase tracking-wide text-green-100">Rain</p>
-                  <p id="${d.toLowerCase()}-rain"
-   class="text-2xl font-bold mt-2">
-   --
-</p>
-                </div>
+          <p id="${d.toLowerCase()}-temp"
+             class="text-2xl font-bold mt-2">
+             --
+          </p>
+        </div>
 
-                <div class="bg-white/10 rounded-2xl p-4">
-                  <p class="text-xs uppercase tracking-wide text-green-100">Wind</p>
-                  <p id="${d.toLowerCase()}-wind"
-   class="text-2xl font-bold mt-2">
-   --
-</p>
-                </div>
+        <div class="bg-white/10 rounded-2xl p-4">
+          <p class="text-xs uppercase tracking-wide text-green-100">
+            RH
+          </p>
 
-              </div>
+          <p id="${d.toLowerCase()}-rh"
+             class="text-2xl font-bold mt-2">
+             --
+          </p>
+        </div>
 
-              <div class="mt-5 bg-green-500/20 border border-green-300/20 rounded-2xl p-4 flex items-center justify-between">
-                <div>
-                  <p class="text-xs uppercase tracking-wide text-green-100">GDD</p>
-                  <p class="text-3xl font-bold mt-1">--</p>
-                </div>
+        <div class="bg-white/10 rounded-2xl p-4">
+          <p class="text-xs uppercase tracking-wide text-green-100">
+            Rain
+          </p>
 
-                <div class="text-4xl">🌱</div>
-              </div>
-            </div>
-          `).join('')
-        );
+          <p id="${d.toLowerCase()}-rain"
+             class="text-2xl font-bold mt-2">
+             --
+          </p>
+        </div>
+
+        <div class="bg-white/10 rounded-2xl p-4">
+          <p class="text-xs uppercase tracking-wide text-green-100">
+            Wind
+          </p>
+
+          <p id="${d.toLowerCase()}-wind"
+             class="text-2xl font-bold mt-2">
+             --
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-5 bg-green-500/20 border border-green-300/20 rounded-2xl p-4 flex items-center justify-between">
+
+        <div>
+          <p class="text-xs uppercase tracking-wide text-green-100">
+            GDD
+          </p>
+
+          <p class="text-3xl font-bold mt-1">
+            --
+          </p>
+        </div>
+
+        <div class="text-4xl">🌱</div>
+
+      </div>
+
+    </div>
+  `).join('')
+);
       </script>
 
     </div>
