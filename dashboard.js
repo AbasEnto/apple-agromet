@@ -9,46 +9,143 @@ Reads weather data and updates cards
 
 
 /*
+
+/*
 -----------------------------------------
-Update one district card
+Show Loading State
 -----------------------------------------
 */
-function updateDistrictCard(id, weather) {
+function setLoadingState(id) {
 
-    if (!weather) return;
+    ["temp", "rh", "rain", "wind"].forEach(metric => {
 
-    const tempElement =
-        document.getElementById(`${id}-temp`);
+        const element =
+            document.getElementById(
+                `${id}-${metric}`
+            );
 
-    const rhElement =
-        document.getElementById(`${id}-rh`);
+        if (element) {
 
-    const rainElement =
-        document.getElementById(`${id}-rain`);
+            element.textContent =
+                "Loading...";
 
-    const windElement =
-        document.getElementById(`${id}-wind`);
+            element.classList.add(
+                "loading"
+            );
 
-
-    if (tempElement)
-        tempElement.textContent =
-            `${weather.temperature.toFixed(1)} °C`;
-
-    if (rhElement)
-        rhElement.textContent =
-            `${weather.humidity}%`;
-
-    if (rainElement)
-        rainElement.textContent =
-            `${weather.rainfall} mm`;
-
-    if (windElement)
-        windElement.textContent =
-            `${weather.wind} km/h`;
+            element.classList.remove(
+                "error"
+            );
+        }
+    });
 }
 
 
 /*
+-----------------------------------------
+Show Error State
+-----------------------------------------
+*/
+function setErrorState(id) {
+
+    ["temp", "rh", "rain", "wind"].forEach(metric => {
+
+        const element =
+            document.getElementById(
+                `${id}-${metric}`
+            );
+
+        if (element) {
+
+            element.textContent =
+                "N/A";
+
+            element.classList.remove(
+                "loading"
+            );
+
+            element.classList.add(
+                "error"
+            );
+        }
+    });
+}
+-----------------------------------------
+Update one district card
+-----------------------------------------
+function updateDistrictCard(id, weather) {
+
+    if (!weather) {
+
+        setErrorState(id);
+        return;
+    }
+
+    const tempElement =
+        document.getElementById(
+            `${id}-temp`
+        );
+
+    const rhElement =
+        document.getElementById(
+            `${id}-rh`
+        );
+
+    const rainElement =
+        document.getElementById(
+            `${id}-rain`
+        );
+
+    const windElement =
+        document.getElementById(
+            `${id}-wind`
+        );
+
+
+    if (tempElement) {
+
+        tempElement.textContent =
+            `${weather.temperature.toFixed(1)} °C`;
+
+        tempElement.classList.remove(
+            "loading",
+            "error"
+        );
+    }
+
+    if (rhElement) {
+
+        rhElement.textContent =
+            `${weather.humidity}%`;
+
+        rhElement.classList.remove(
+            "loading",
+            "error"
+        );
+    }
+
+    if (rainElement) {
+
+        rainElement.textContent =
+            `${weather.rainfall} mm`;
+
+        rainElement.classList.remove(
+            "loading",
+            "error"
+        );
+    }
+
+    if (windElement) {
+
+        windElement.textContent =
+            `${weather.wind} km/h`;
+
+        windElement.classList.remove(
+            "loading",
+            "error"
+        );
+    }
+}
 -----------------------------------------
 Update timestamp
 -----------------------------------------
@@ -97,6 +194,7 @@ async function refreshDashboard() {
                 item.district
                     .toLowerCase()
                     .replace(/\s+/g, "-");
+            setLoadingState(districtId);
 
             updateDistrictCard(
                 districtId,
