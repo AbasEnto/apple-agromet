@@ -25,10 +25,10 @@ function setLoadingState(id) {
         if (element) {
 
             element.textContent =
-                "Loading...";
+                "Updating...";
 
             element.classList.add(
-                "loading"
+                "updating"
             );
 
             element.classList.remove(
@@ -110,7 +110,7 @@ function updateDistrictCard(id, weather) {
             `${weather.temperature.toFixed(1)} °C`;
 
         tempElement.classList.remove(
-            "loading",
+            "updating",
             "error"
         );
     }
@@ -121,7 +121,7 @@ function updateDistrictCard(id, weather) {
             `${weather.humidity}%`;
 
         rhElement.classList.remove(
-            "loading",
+            "updating",
             "error"
         );
     }
@@ -132,7 +132,7 @@ function updateDistrictCard(id, weather) {
             `${weather.rainfall} mm`;
 
         rainElement.classList.remove(
-            "loading",
+            "updating",
             "error"
         );
     }
@@ -143,7 +143,7 @@ function updateDistrictCard(id, weather) {
             `${weather.wind} km/h`;
 
         windElement.classList.remove(
-            "loading",
+            "updating",
             "error"
         );
     }
