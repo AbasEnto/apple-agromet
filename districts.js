@@ -5,7 +5,7 @@ const districts = [
 
   {
     id: "srinagar",
-    name: "Srinagar",
+    name: "Srinagar",  
     latitude: 34.108000,
     longitude: 74.877833
   },
