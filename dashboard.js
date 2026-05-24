@@ -3,7 +3,7 @@
 Kashmir AgroMet Dashboard
 dashboard.js
 =========================================
-Reads weather data and updates cards 
+Reads weather data and updates cards   
 =========================================
 */
 
