@@ -7,6 +7,7 @@ Reads weather data and updates cards
 =========================================
 */
 
+
 /*
 -----------------------------------------
 Show Loading State
@@ -67,9 +68,13 @@ function setErrorState(id) {
         }
     });
 }
+
+
+/*
 -----------------------------------------
 Update one district card
 -----------------------------------------
+*/
 function updateDistrictCard(id, weather) {
 
     if (!weather) {
@@ -143,6 +148,9 @@ function updateDistrictCard(id, weather) {
         );
     }
 }
+
+
+/*
 -----------------------------------------
 Update timestamp
 -----------------------------------------
@@ -176,14 +184,20 @@ Main Dashboard Refresh
 */
 async function refreshDashboard() {
 
-    districts.forEach(d => {
-        setLoadingState(d.id);
-    });
+    if (typeof districts !== "undefined") {
+
+        districts.forEach(d => {
+            setLoadingState(d.id);
+        });
+    }
 
     const timestampElement =
-        document.getElementById("last-updated");
+        document.getElementById(
+            "last-updated"
+        );
 
     if (timestampElement) {
+
         timestampElement.textContent =
             "Fetching weather...";
     }
@@ -223,12 +237,17 @@ async function refreshDashboard() {
             error
         );
 
-        districts.forEach(d => {
-            setErrorState(d.id);
-        });
+        if (typeof districts !== "undefined") {
+
+            districts.forEach(d => {
+                setErrorState(d.id);
+            });
+        }
     }
 }
-*/
+
+
+/*
 -----------------------------------------
 Start dashboard
 -----------------------------------------
@@ -239,9 +258,6 @@ document.addEventListener(
 
         refreshDashboard();
 
-        /*
-         refresh every 30 minutes
-        */
         setInterval(
             refreshDashboard,
             30 * 60 * 1000
