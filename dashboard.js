@@ -59,7 +59,7 @@ function setErrorState(id) {
                 "N/A";
 
             element.classList.remove(
-                "loading"
+                "updating"
             );
 
             element.classList.add(
